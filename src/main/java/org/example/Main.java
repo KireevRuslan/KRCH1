@@ -1,17 +1,37 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+        char[] chars = "J@va the be$t!123".toCharArray();
+        int left = 0;
+        int right = chars.length - 1;
+        int a;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
+        while (left < right) {
+            char firstChar = chars[left];
+            if (Character.isLetter(chars[left])){
+                a = 1;
+            } else {
+                left++;
+                a = 0;
+            }
+            if (a == 1){
+                if (Character.isLetter(chars[right])){
+                    chars[left] = chars[right];
+                    chars[right] = firstChar;
+                    right--;
+                    left++;
+                } else {
+                    right--;
+                }
+            } else {}
+
+
+
         }
+
+        System.out.println(new String(chars));
+
     }
 }
