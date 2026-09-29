@@ -1,13 +1,11 @@
 package org.example.main;
 
-import org.example.Main;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.example.Main.replaceText;
 
 public class MainTest {
-    private Main replaceText = new Main();
 
     @Test
     public void replaceText_shouldReplaceChar_ifHaveChar() {
