@@ -14,19 +14,19 @@ public class Main {
 
         while (left < right) {
             char firstChar;
-            if (Character.isLetter(chars[left])) {
-                if (Character.isLetter(chars[right])) {
-                    firstChar = chars[left];
-                    chars[left] = chars[right];
-                    chars[right] = firstChar;
-                    left++;
-                    right--;
-                } else {
-                    right--;
-                }
-            } else {
+            if (!Character.isLetter(chars[left])) {
                 left++;
+                continue;
             }
+            if (!Character.isLetter(chars[right])) {
+                right--;
+                continue;
+            }
+            firstChar = chars[left];
+            chars[left] = chars[right];
+            chars[right] = firstChar;
+            left++;
+            right--;
         }
         return chars;
     }
