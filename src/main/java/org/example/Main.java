@@ -9,6 +9,13 @@ public class Main {
     }
 
     public static char[] replaceText(char[] chars) {
+        if (chars == null) {
+            return new char[0];
+        }
+        if (chars.length == 0) {
+            return chars;
+        }
+
         int left = 0;
         int right = chars.length - 1;
 
