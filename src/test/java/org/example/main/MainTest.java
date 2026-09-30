@@ -14,7 +14,7 @@ public class MainTest {
     }
 
     @Test
-    public void replaceText_shouldReturnEmpry_whenCahrNull() {
+    public void replaceText_shouldReturnEmpty_whenCharEmpty() {
         char[] resultChar = replaceText("".toCharArray());
         Assertions.assertArrayEquals("".toCharArray(), resultChar);
     }
